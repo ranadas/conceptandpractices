@@ -1,0 +1,15 @@
+http://www.mkyong.com/tutorials/spring-security-tutorials/
+http://www.mkyong.com/spring-security/spring-security-hello-world-example/
+
+
+http://localhost:8080/
+
+
+Basic Spring MVC 4.0.x application using WebApplicationInitializer instead of web.xml.
+http://kielczewski.eu/2013/11/spring-mvc-without-web-xml-using-webapplicationinitializer/
+https://github.com/bkielczewski/example-spring-mvc-initializer
+
+Spring WebApplicationInitializer and ApplicationContextInitializer confusion
+http://java.dzone.com/articles/spring-1
+
+http://docs.spring.io/autorepo/docs/webflow/2.3.x/reference/html/flow-security.html

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <mvc:annotation-driven/>
+
+    <context:component-scan
+            base-package="com.rdas.ui.controller, com.rdas.ui.model, com.rdas.ui.service, com.rdas.config,
+            com.rdas.rest.dbaccess, com.rdas.rest.dbaccess.core.request.db,
+            com.rdas.rest.model, com.rdas.ui.config"/>
+
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+    <mvc:resources mapping="/image/**" location="/WEB-INF/image/"/>
+    <mvc:resources mapping="/js/**" location="/WEB-INF/js/"/>
+    <mvc:resources mapping="/css/**" location="/WEB-INF/css/"/>
+    <mvc:resources mapping="/simgs/**" location="/static-images/"/>
+
+
+    <mvc:view-controller path="/WEB_INF/jsp/angviews/" view-name="ang-vw1"/>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>
