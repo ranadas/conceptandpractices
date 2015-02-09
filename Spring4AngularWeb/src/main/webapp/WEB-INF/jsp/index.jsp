@@ -8,7 +8,7 @@
     <script>
     </script>
 </head>
-<body>
+<body class="container">
 
 <div ng-controller="initController">
     <h4> ${msg} {{message}}</h4>
@@ -18,11 +18,17 @@
     Time : {{dataFromGet| date:'yyyy-MM-dd HH:mm:ss'}}
 </div>
 
+<div ng-controller="userController">
+
+    Type something: <input type="text" ng-model="someUserText"><br>
+    You typed: {{someUserText}}
+
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular.min.js"></script>
 
-<%--<script type="text/javascript" src="./js/app__js__"></script>--%>
 <script src="/js/index.js"></script>
 
 </body>

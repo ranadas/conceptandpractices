@@ -14,20 +14,10 @@ indexAppVar.controller('userController',
         $scope.dataFromGet = "before calling ";
         $http.get('showdate').
             success(function(data, status, headers, config) {
-//                $scope.posts = data;
                 console.log('type of data from backend : ' + typeof data);
                 console.log("After GET: data from Controller:" + data + "\nand Status: " + status);
                 $scope.dataFromGet = data;
             });
-
-//        $.get("showdate.json",
-//            function (data, status) {
-//            //$scope.dataFromGet = "setting value";
-//            console.log('type of data from backend : ' + typeof data);
-//            console.log("After GET: data from Controller:" + data + "\nand Status: " + status);
-//            //$scope.dataFromGet="Rana das";
-//            };
-//        );
     });
 
 $(document).ready(function () {
