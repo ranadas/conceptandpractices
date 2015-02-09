@@ -15,7 +15,7 @@ public class WelcomeController {
 
     @RequestMapping(value = "/welcome", method = RequestMethod.GET)
     public ModelAndView showWelcome() {
-        ModelAndView model = new ModelAndView("angwelcome");
+        ModelAndView model = new ModelAndView("welcome");
         return model;
     }
 
