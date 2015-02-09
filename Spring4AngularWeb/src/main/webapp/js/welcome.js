@@ -38,36 +38,43 @@ angIndexApp.controller('help', function ($scope, $http, $log, promiseTracker, $t
             },
         };
 
-        // Perform JSONP request.
-        var $promise = $http.jsonp('welcome', config)
-            .success(function(data, status, headers, config) {
-                if (data.status == 'OK') {
-                    $scope.name = null;
-                    $scope.email = null;
-                    $scope.subjectList = null;
-                    $scope.url = null;
-                    $scope.comments = null;
-                    $scope.messages = 'Your form has been sent!';
-                    $scope.submitted = false;
-                } else {
-                    $scope.messages = 'Oops, we received your request, but there was an error processing it.';
-                    $log.error(data);
-                }
-            })
-            .error(function(data, status, headers, config) {
-                $scope.progress = data;
-                $scope.messages = 'There was a network error. Try again later.';
-                $log.error(data);
-            })
-            .finally(function() {
-                // Hide status messages after three seconds.
-                $timeout(function() {
-                    $scope.messages = null;
-                }, 3000);
+        $http.post('welcome').
+            success(function(data, status, headers, config) {
+                console.log('type of data from backend : ' + typeof data);
+                console.log("After GET: data from Controller:" + data + "\nand Status: " + status);
+                $scope.dataFromGet = data;
             });
 
-        // Track the request and show its progress to the user.
-        $scope.progress.addPromise($promise);
+        // Perform JSONP request.
+//        var $promise = $http.jsonp('welcome', config)
+//            .success(function(data, status, headers, config) {
+//                if (data.status == 'OK') {
+//                    $scope.name = null;
+//                    $scope.email = null;
+//                    $scope.subjectList = null;
+//                    $scope.url = null;
+//                    $scope.comments = null;
+//                    $scope.messages = 'Your form has been sent!';
+//                    $scope.submitted = false;
+//                } else {
+//                    $scope.messages = 'Oops, we received your request, but there was an error processing it.';
+//                    $log.error(data);
+//                }
+//            })
+//            .error(function(data, status, headers, config) {
+//                $scope.progress = data;
+//                $scope.messages = 'There was a network error. Try again later.';
+//                $log.error(data);
+//            })
+//            .finally(function() {
+//                // Hide status messages after three seconds.
+//                $timeout(function() {
+//                    $scope.messages = null;
+//                }, 3000);
+//            });
+//
+//        // Track the request and show its progress to the user.
+//        $scope.progress.addPromise($promise);
     };
 
 

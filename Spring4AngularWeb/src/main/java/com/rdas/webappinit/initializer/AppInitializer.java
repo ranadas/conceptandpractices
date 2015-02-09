@@ -20,7 +20,7 @@ import javax.servlet.ServletRegistration;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = "com.rdas.webappinit")
+@ComponentScan({"com.rdas.webappinit", "com.rdas.db"})
 public class AppInitializer extends WebMvcConfigurerAdapter implements WebApplicationInitializer {
 
     private static final String CONFIG_LOCATION = "com.rdas";

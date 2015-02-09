@@ -61,6 +61,6 @@
 <script src="/js/promise-tracker.js"></script>
 <script src="/js/promise-tracker-http-interceptor.js"></script>
 
-<script src="/js/angwelcome.js"></script>
+<script src="/js/welcome.js"></script>
 </body>
 </html>

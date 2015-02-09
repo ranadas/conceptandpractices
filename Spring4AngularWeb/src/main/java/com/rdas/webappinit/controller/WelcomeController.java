@@ -19,10 +19,11 @@ public class WelcomeController {
         return model;
     }
 
+    // https://www.lullabot.com/blog/article/processing-forms-angularjs
     @RequestMapping(value = "/welcome", method = RequestMethod.POST)
     public ModelAndView showDateJson() {
         log.info("\n\n --> POST RECEIVED\n\n");
-        ModelAndView model = new ModelAndView("angwelcome");
+        ModelAndView model = new ModelAndView("welcome");
         return model;
     }
 
