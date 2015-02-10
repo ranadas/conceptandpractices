@@ -6,30 +6,31 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container">
-<h3>AngularJs form</h3>
+
 
 <div data-ng-controller="help">
     <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
     <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending&hellip;</div>
+
     <form name="helpForm" novalidate role="form">
         <div class="form-group">
             <label for="name">Your Name </label>
             <span class="label label-danger" data-ng-show="submitted && helpForm.name.$error.required">Required!</span>
-            <input type="text" name="name" data-ng-model="name" class="form-control" required/>
+            <input type="text" id="name" name="name" data-ng-model="name" class="form-control" required/>
         </div>
 
         <div class="form-group">
             <label for="email">Your E-mail address</label>
             <span class="label label-danger" data-ng-show="submitted && helpForm.email.$error.required">Required!</span>
             <span class="label label-danger" data-ng-show="submitted && helpForm.$error.email">Invalid email!</span>
-            <input type="email" name="email" data-ng-model="email" class="form-control" required/>
+            <input type="email" id="email" name="email" data-ng-model="email" class="form-control" required/>
         </div>
 
         <div class="form-group">
             <label for="subjectList">What is the nature of your request?</label>
             <span class="label label-danger"
                   data-ng-show="submitted && helpForm.subjectList.$error.required">Required!</span>
-            <select name="subjectList" data-ng-model="subjectList"
+            <select name="subjectList" data-ng-model="subjectList" id="subjectList"
                     data-ng-options="id as value for (id, value) in subjectListOptions" class="form-control" required>
                 <option value=""></option>
             </select>
@@ -38,12 +39,12 @@
         <div class="form-group">
             <label for="url">URL of Relevant Page</label>
             <span class="label label-danger" data-ng-show="submitted && helpForm.$error.url">Invalid URL format!</span>
-            <input type="url" name="url" data-ng-model="url" class="form-control"/>
+            <input type="url" id="url" name="url" data-ng-model="url" class="form-control"/>
         </div>
 
         <div class="form-group">
             <label for="comments">Description</label>
-            <span class="label label-danger"
+            <span class="label label-danger" id="comments"
                   data-ng-show="submitted && helpForm.comments.$error.required">Required!</span>
             <textarea name="comments" data-ng-model="comments" class="form-control" required></textarea>
         </div>

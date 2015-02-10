@@ -1,0 +1,4 @@
+CREATE TABLE  email_subject (
+  id INTEGER PRIMARY KEY,
+  value VARCHAR(200) NOT NULL
+);

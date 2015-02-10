@@ -1,6 +1,8 @@
 package com.rdas.webappinit.initializer;
 
+import comn.rdas.db.DatabaseConfig;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.WebApplicationContext;
@@ -20,6 +22,7 @@ import javax.servlet.ServletRegistration;
 
 @EnableWebMvc
 @Configuration
+@Import({ DatabaseConfig.class })
 @ComponentScan({"com.rdas.webappinit", "com.rdas.db"})
 public class AppInitializer extends WebMvcConfigurerAdapter implements WebApplicationInitializer {
 
@@ -45,6 +48,7 @@ public class AppInitializer extends WebMvcConfigurerAdapter implements WebApplic
     @Bean
     public ViewResolver pageViewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        //resolver.setViewClass(JstlView.class);
         resolver.setPrefix("/WEB-INF/jsp/");
         resolver.setSuffix(".jsp");
         return resolver;
