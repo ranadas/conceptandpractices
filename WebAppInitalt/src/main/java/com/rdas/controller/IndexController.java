@@ -1,4 +1,4 @@
-package com.rdas.webappinit.controller;
+package com.rdas.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;

@@ -13,6 +13,7 @@
     <name>A Parent for all learning projects.</name>
 
     <modules>
+        <module>JpaSpring4</module>
         <module>javascriptprojs</module>
         <module>WebAppInit</module>
         <module>WebAppInitalt</module>
