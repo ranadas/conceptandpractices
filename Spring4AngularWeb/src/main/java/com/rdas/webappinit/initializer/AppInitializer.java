@@ -61,5 +61,8 @@ public class AppInitializer extends WebMvcConfigurerAdapter implements WebApplic
         registry.addResourceHandler("/css/**").addResourceLocations("/css/");
         registry.addResourceHandler("/js/**").addResourceLocations("/js/");
         registry.addResourceHandler("/images/**").addResourceLocations("/images/");
+        registry.addResourceHandler("*.html").addResourceLocations("/");
+        registry.addResourceHandler("/templates/**").addResourceLocations("/templates/");
+        registry.addResourceHandler("/partials/**").addResourceLocations("/partials/");
     }
 }
